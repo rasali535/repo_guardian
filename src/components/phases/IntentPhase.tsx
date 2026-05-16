@@ -174,7 +174,7 @@ export function IntentPhase() {
             </div>
 
             <div className="flex gap-3">
-              <Button onClick={() => setIntentPlan(null)} variant="outline" className="flex-1">
+              <Button onClick={() => { setIntentPlan(null); setIntent(''); }} variant="outline" className="flex-1">
                 Revise Plan
               </Button>
               <Button onClick={handleApprove} className="flex-1">

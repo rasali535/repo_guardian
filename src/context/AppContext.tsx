@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import { createContext, useContext, useReducer } from 'react';
+import type { ReactNode } from 'react';
 import type { AppState, Phase, RepositoryAnalysis, StyleGuide, IntentPlan, GeneratedFile, ValidationResult } from '../types';
 
 // Initial state
@@ -18,7 +19,7 @@ type AppAction =
   | { type: 'SET_PHASE'; payload: Phase }
   | { type: 'SET_REPOSITORY_ANALYSIS'; payload: RepositoryAnalysis }
   | { type: 'SET_STYLE_GUIDE'; payload: StyleGuide }
-  | { type: 'SET_INTENT_PLAN'; payload: IntentPlan }
+  | { type: 'SET_INTENT_PLAN'; payload: IntentPlan | null }
   | { type: 'ADD_GENERATED_FILE'; payload: GeneratedFile }
   | { type: 'SET_GENERATED_FILES'; payload: GeneratedFile[] }
   | { type: 'SET_VALIDATION_RESULTS'; payload: ValidationResult[] }
@@ -60,7 +61,7 @@ interface AppContextType {
   setPhase: (phase: Phase) => void;
   setRepositoryAnalysis: (analysis: RepositoryAnalysis) => void;
   setStyleGuide: (guide: StyleGuide) => void;
-  setIntentPlan: (plan: IntentPlan) => void;
+  setIntentPlan: (plan: IntentPlan | null) => void;
   addGeneratedFile: (file: GeneratedFile) => void;
   setGeneratedFiles: (files: GeneratedFile[]) => void;
   setValidationResults: (results: ValidationResult[]) => void;

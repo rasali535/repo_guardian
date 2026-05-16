@@ -16,8 +16,6 @@ const phases = [
 ];
 
 export function Navigator({ currentPhase, completedPhases }: NavigatorProps) {
-  const currentIndex = phases.findIndex((p) => p.id === currentPhase);
-
   return (
     <div className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -26,7 +24,6 @@ export function Navigator({ currentPhase, completedPhases }: NavigatorProps) {
             const Icon = phase.icon;
             const isCompleted = completedPhases.includes(phase.id);
             const isCurrent = phase.id === currentPhase;
-            const isUpcoming = index > currentIndex;
 
             return (
               <div key={phase.id} className="flex items-center flex-1">

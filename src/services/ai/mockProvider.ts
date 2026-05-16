@@ -202,7 +202,7 @@ import { Button } from '@/components/Button';
     };
   }
 
-  async generateFile(plan: IntentPlan, filePath: string, styleGuide: StyleGuide): Promise<GeneratedFile> {
+  async generateFile(_plan: IntentPlan, filePath: string, _styleGuide: StyleGuide): Promise<GeneratedFile> {
     await delay(2000);
 
     const fileName = filePath.split('/').pop() || '';
@@ -279,7 +279,7 @@ export type Status = 'idle' | 'loading' | 'success' | 'error';
     };
   }
 
-  async validateFiles(files: GeneratedFile[], styleGuide: StyleGuide): Promise<ValidationResult[]> {
+  async validateFiles(files: GeneratedFile[], _styleGuide: StyleGuide): Promise<ValidationResult[]> {
     await delay(1000);
 
     return files.map((file) => ({
